@@ -1,0 +1,9 @@
+@import "./styles/font.scss";
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.App{
+  font-family: "Poppins";
+}
