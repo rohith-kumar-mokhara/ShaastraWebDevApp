@@ -60,9 +60,11 @@ export default function EditTask(props: EditTaskProps) {
         },
       });
       console.log("Deleted the task ", data);
+      toast.success("Task deleted successfully", { autoClose: 1500 });
       navigate("/");
     } catch (err) {
       console.log(`Cannot delete the task ${err}`);
+      toast.error("Error deleting the task", { autoClose: 1500 });
     }
   };
 
@@ -122,9 +124,11 @@ export default function EditTask(props: EditTaskProps) {
         },
       });
       console.log("Edited the task ", data);
+      toast.success("Task updated successfully", { autoClose: 1500 });
       navigate("/");
     } catch (err) {
       console.log(`Cannot edit the task ${err}`);
+      toast.error("Error updating the task", { autoClose: 1500 });
     }
   };
 

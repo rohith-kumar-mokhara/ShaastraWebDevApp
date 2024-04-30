@@ -22,6 +22,7 @@ import { GET_TASKS, GET_TASK_BY_DATE } from "../../graphql/queries/queries.ts";
 import { DELETE_DONE_TASK } from "../../graphql/mutations/mutations.ts";
 import Calendar from "../../assets/categoryImages/calendar.svg";
 import Clock from "../../assets/categoryImages/clock.svg";
+import {toast} from "react-toastify"
 //
 
 // import { useEffect } from "react";
@@ -94,8 +95,10 @@ export default function Tasks(props: TasksProps) {
         },
       });
       await refetch();
+      toast.success("Task deleted successfully", { autoClose: 1500 });
     } catch (err) {
       console.log(`Cannot delete the given task ${err}`);
+      toast.error("Error deleting task", { autoClose: 1500 });
     }
   };
 

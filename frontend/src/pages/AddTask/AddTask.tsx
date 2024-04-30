@@ -68,10 +68,12 @@ export default function AddTask(props: AddTaskProps) {
                 }
             })
             console.log("Created the task ", data);
+            toast.success("Task created successfully", { autoClose: 1500 });
             navigate("/")
         }
         catch(err){
             console.log(`Cannot create the task ${err}`)
+            toast.error("Error creating task", { autoClose: 1500 });
         }
     }
 
